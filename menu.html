@@ -15,8 +15,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://demos.jquerymobile.com/1.4.2/css/themes/default/jquery.mobile-1.4.2.min.css">
     <link rel="stylesheet" href="css/menu.css">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
     <title>Document</title>
 </head>
 
@@ -222,19 +220,19 @@
                         <p class="title_size">Size</p>
                         <div class="size_picker d-flex flex-column">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                <span class="custom_checkbox"><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></span>
                                 <label class="form-check-label" for="inlineCheckbox1">S</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                <span class="custom_checkbox"><input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"></span>
                                 <label class="form-check-label" for="inlineCheckbox2">M</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                                <span class="custom_checkbox"><input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"></span>
                                 <label class="form-check-label" for="inlineCheckbox3">L</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                                <span class="custom_checkbox"><input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"></span>
                                 <label class="form-check-label" for="inlineCheckbox3">XL</label>
                             </div>
                         </div>
@@ -244,7 +242,724 @@
                     <div class="filter_brand">ds</div>
                     <div class="filter_dimension">dsds</div>
                 </div>
-                <div id="content_wrapper" class="left-column col-xs-12 col-sm-8 col-md-9"></div>
+                <div id="content_wrapper" class="right-column col-xs-12 col-sm-8 col-md-9">
+                    <div class="sort_product_top">
+                        <div class="row">
+                            <div class="col-md-6 total_product">
+                                <div class="display d-flex">
+                                    <a href="#" class="grid active"><i class="fa fa-th"></i></a>
+                                    <a href="#" class="list"><i class="fa fa-list"></i></a>
+                                    <p class="hidden-sm-down">There are 17 products.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row sort-by-row d-flex align-items-center">
+                                    <span class="col-sm-3 col-md-3 hidden-sm-down sort-by">Sort by:</span>
+                                    <div class="col-sm-9 col-xs-8 col-md-9 products-sort-order dropdown">
+                                        <button class="btn-unstyle select-title" rel="nofollow" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Relevance
+                                            <i class="material-icons">arrow_drop_down</i>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a rel="nofollow" href="#" class="select-list current js-search-link">Relevance</a>
+                                            <a rel="nofollow" href="#" class="select-list js-search-link">Name, A to Z</a>
+                                            <a rel="nofollow" href="#" class="select-list js-search-link">Name, Z to A</a>
+                                            <a rel="nofollow" href="#" class="select-list js-search-link">Price, low to high</a>
+                                            <a rel="nofollow" href="#" class="select-list js-search-link">Price, high to low</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-xs-4 hidden-md-up filter-button d-none">
+                                        <button id="search_filter_toggler" class="btn btn-secondary" href="#search_filters_wrapper">
+                                        Filter
+                                      </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid_product">
+                        <div class="row ">
+                            <div class="product_item col-3">
+                                <div class="img_block">
+                                    <div class="new"><span>New</span></div>
+                                    <img src="img/best_seller_2_3.jpg" alt="">
+                                    <div class="add-to-links ">
+                                        <div class="favorite">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-android-favorite-outline"></i>
+                                            </a>
+                                        </div>
+                                        <div class="shuffle">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-ios-shuffle-strong"></i>
+                                            </a>
+                                        </div>
+                                        <div class="search">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-ios-search-strong"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product_desc">
+                                    <div class="manufacturer"><a href="#">Studio Design</a></div>
+                                    <h3 itemprop="name"><a class="product_name" href="" title="">Originals Kaval Windbreaker Winter Jacket 2</a></h3>
+                                    <div class="reviews">
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="sr-only">Regular price</span>
+                                        <span class="regular-price">$23.90</span>
+                                        <span class="sr-only">Price</span>
+                                        <span itemprop="price" class="price price-sale">$21.51</span>
+                                        <span class="discount-percentage discount-product" style="top: 10px;">-10%</span>
+                                    </div>
+                                    <button type="button" class="btn">Add to cart</button>
+                                </div>
+                            </div>
+                            <div class="product_item col-3">
+                                <div class="img_block">
+                                    <div class="new"><span>New</span></div>
+                                    <img src="img/best_seller_3_3.jpg" alt="">
+                                    <div class="add-to-links ">
+                                        <div class="favorite">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-android-favorite-outline"></i>
+                                            </a>
+                                        </div>
+                                        <div class="shuffle">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-ios-shuffle-strong"></i>
+                                            </a>
+                                        </div>
+                                        <div class="search">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-ios-search-strong"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product_desc">
+                                    <div class="manufacturer"><a href="#">Studio Design</a></div>
+                                    <h3 itemprop="name"><a class="product_name" href="" title="">Originals Kaval Windbreaker Winter Jacket 2</a></h3>
+                                    <div class="reviews">
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="sr-only">Regular price</span>
+                                        <span class="regular-price">$23.90</span>
+                                        <span class="sr-only">Price</span>
+                                        <span itemprop="price" class="price price-sale">$21.51</span>
+                                        <span class="discount-percentage discount-product" style="top: 10px;">-10%</span>
+                                    </div>
+                                    <button type="button" class="btn">Add to cart</button>
+                                </div>
+                            </div>
+                            <div class="product_item col-3">
+                                <div class="img_block">
+                                    <div class="new"><span>New</span></div>
+                                    <img src="img/best_seller_1_2.jpg" alt="">
+                                    <div class="add-to-links ">
+                                        <div class="favorite">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-android-favorite-outline"></i>
+                                            </a>
+                                        </div>
+                                        <div class="shuffle">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-ios-shuffle-strong"></i>
+                                            </a>
+                                        </div>
+                                        <div class="search">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-ios-search-strong"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product_desc">
+                                    <div class="manufacturer"><a href="#">Studio Design</a></div>
+                                    <h3 itemprop="name"><a class="product_name" href="" title="">Originals Kaval Windbreaker Winter Jacket 2</a></h3>
+                                    <div class="reviews">
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="sr-only">Regular price</span>
+                                        <span class="regular-price">$23.90</span>
+                                        <span class="sr-only">Price</span>
+                                        <span itemprop="price" class="price price-sale">$21.51</span>
+                                        <span class="discount-percentage discount-product" style="top: 10px;">-10%</span>
+                                    </div>
+                                    <button type="button" class="btn">Add to cart</button>
+                                </div>
+                            </div>
+                            <div class="product_item col-3">
+                                <div class="img_block">
+                                    <div class="new"><span>New</span></div>
+                                    <img src="img/best_seller_2_1.jpg" alt="">
+                                    <div class="add-to-links ">
+                                        <div class="favorite">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-android-favorite-outline"></i>
+                                            </a>
+                                        </div>
+                                        <div class="shuffle">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-ios-shuffle-strong"></i>
+                                            </a>
+                                        </div>
+                                        <div class="search">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-ios-search-strong"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product_desc">
+                                    <div class="manufacturer"><a href="#">Studio Design</a></div>
+                                    <h3 itemprop="name"><a class="product_name" href="" title="">Originals Kaval Windbreaker Winter Jacket 2</a></h3>
+                                    <div class="reviews">
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star star_no_choose"></i>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="sr-only">Regular price</span>
+                                        <span class="regular-price">$23.90</span>
+                                        <span class="sr-only">Price</span>
+                                        <span itemprop="price" class="price price-sale">$21.51</span>
+                                        <span class="discount-percentage discount-product" style="top: 10px;">-10%</span>
+                                    </div>
+                                    <button type="button" class="btn">Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="product_item col-3">
+                                <div class="img_block">
+                                    <div class="new"><span>New</span></div>
+                                    <img src="img/hotdeal3.jpg" alt="">
+                                    <div class="add-to-links ">
+                                        <div class="favorite">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-android-favorite-outline"></i>
+                                            </a>
+                                        </div>
+                                        <div class="shuffle">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-ios-shuffle-strong"></i>
+                                            </a>
+                                        </div>
+                                        <div class="search">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-ios-search-strong"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product_desc">
+                                    <div class="manufacturer"><a href="#">Studio Design</a></div>
+                                    <h3 itemprop="name"><a class="product_name" href="" title="">Originals Kaval Windbreaker Winter Jacket 2</a></h3>
+                                    <div class="reviews">
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="sr-only">Regular price</span>
+                                        <span class="regular-price">$23.90</span>
+                                        <span class="sr-only">Price</span>
+                                        <span itemprop="price" class="price price-sale">$21.51</span>
+                                        <span class="discount-percentage discount-product" style="top: 10px;">-10%</span>
+                                    </div>
+                                    <button type="button" class="btn">Add to cart</button>
+                                </div>
+                            </div>
+                            <div class="product_item col-3">
+                                <div class="img_block">
+                                    <div class="new"><span>New</span></div>
+                                    <img src="img/best_seller_2_2.jpg" alt="">
+                                    <div class="add-to-links ">
+                                        <div class="favorite">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-android-favorite-outline"></i>
+                                            </a>
+                                        </div>
+                                        <div class="shuffle">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-ios-shuffle-strong"></i>
+                                            </a>
+                                        </div>
+                                        <div class="search">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-ios-search-strong"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product_desc">
+                                    <div class="manufacturer"><a href="#">Studio Design</a></div>
+                                    <h3 itemprop="name"><a class="product_name" href="" title="">Originals Kaval Windbreaker Winter Jacket 2</a></h3>
+                                    <div class="reviews">
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="sr-only">Regular price</span>
+                                        <span class="regular-price">$23.90</span>
+                                        <span class="sr-only">Price</span>
+                                        <span itemprop="price" class="price price-sale">$21.51</span>
+                                        <span class="discount-percentage discount-product" style="top: 10px;">-10%</span>
+                                    </div>
+                                    <button type="button" class="btn">Add to cart</button>
+                                </div>
+                            </div>
+                            <div class="product_item col-3">
+                                <div class="img_block">
+                                    <div class="new"><span>New</span></div>
+                                    <img src="img/best_seller_4_1.jpg" alt="">
+                                    <div class="add-to-links ">
+                                        <div class="favorite">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-android-favorite-outline"></i>
+                                            </a>
+                                        </div>
+                                        <div class="shuffle">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-ios-shuffle-strong"></i>
+                                            </a>
+                                        </div>
+                                        <div class="search">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-ios-search-strong"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product_desc">
+                                    <div class="manufacturer"><a href="#">Studio Design</a></div>
+                                    <h3 itemprop="name"><a class="product_name" href="" title="">Originals Kaval Windbreaker Winter Jacket 2</a></h3>
+                                    <div class="reviews">
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="sr-only">Regular price</span>
+                                        <span class="regular-price">$23.90</span>
+                                        <span class="sr-only">Price</span>
+                                        <span itemprop="price" class="price price-sale">$21.51</span>
+                                        <span class="discount-percentage discount-product" style="top: 10px;">-10%</span>
+                                    </div>
+                                    <button type="button" class="btn">Add to cart</button>
+                                </div>
+                            </div>
+                            <div class="product_item col-3">
+                                <div class="img_block">
+                                    <div class="new"><span>New</span></div>
+                                    <img src="img/best_seller_4_2.jpg" alt="">
+                                    <div class="add-to-links ">
+                                        <div class="favorite">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-android-favorite-outline"></i>
+                                            </a>
+                                        </div>
+                                        <div class="shuffle">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-ios-shuffle-strong"></i>
+                                            </a>
+                                        </div>
+                                        <div class="search">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-ios-search-strong"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product_desc">
+                                    <div class="manufacturer"><a href="#">Studio Design</a></div>
+                                    <h3 itemprop="name"><a class="product_name" href="" title="">Originals Kaval Windbreaker Winter Jacket 2</a></h3>
+                                    <div class="reviews">
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star star_no_choose"></i>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="sr-only">Regular price</span>
+                                        <span class="regular-price">$23.90</span>
+                                        <span class="sr-only">Price</span>
+                                        <span itemprop="price" class="price price-sale">$21.51</span>
+                                        <span class="discount-percentage discount-product" style="top: 10px;">-10%</span>
+                                    </div>
+                                    <button type="button" class="btn">Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="product_item col-3">
+                                <div class="img_block">
+                                    <div class="new"><span>New</span></div>
+                                    <img src="img/bestseller_1_1.jpg" alt="">
+                                    <div class="add-to-links ">
+                                        <div class="favorite">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-android-favorite-outline"></i>
+                                            </a>
+                                        </div>
+                                        <div class="shuffle">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-ios-shuffle-strong"></i>
+                                            </a>
+                                        </div>
+                                        <div class="search">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-ios-search-strong"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product_desc">
+                                    <div class="manufacturer"><a href="#">Studio Design</a></div>
+                                    <h3 itemprop="name"><a class="product_name" href="" title="">Originals Kaval Windbreaker Winter Jacket 2</a></h3>
+                                    <div class="reviews">
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="sr-only">Regular price</span>
+                                        <span class="regular-price">$23.90</span>
+                                        <span class="sr-only">Price</span>
+                                        <span itemprop="price" class="price price-sale">$21.51</span>
+                                        <span class="discount-percentage discount-product" style="top: 10px;">-10%</span>
+                                    </div>
+                                    <button type="button" class="btn">Add to cart</button>
+                                </div>
+                            </div>
+                            <div class="product_item col-3">
+                                <div class="img_block">
+                                    <div class="new"><span>New</span></div>
+                                    <img src="img/best_seller_4_3.jpg" alt="">
+                                    <div class="add-to-links ">
+                                        <div class="favorite">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-android-favorite-outline"></i>
+                                            </a>
+                                        </div>
+                                        <div class="shuffle">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-ios-shuffle-strong"></i>
+                                            </a>
+                                        </div>
+                                        <div class="search">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-ios-search-strong"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product_desc">
+                                    <div class="manufacturer"><a href="#">Studio Design</a></div>
+                                    <h3 itemprop="name"><a class="product_name" href="" title="">Originals Kaval Windbreaker Winter Jacket 2</a></h3>
+                                    <div class="reviews">
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="sr-only">Regular price</span>
+                                        <span class="regular-price">$23.90</span>
+                                        <span class="sr-only">Price</span>
+                                        <span itemprop="price" class="price price-sale">$21.51</span>
+                                        <span class="discount-percentage discount-product" style="top: 10px;">-10%</span>
+                                    </div>
+                                    <button type="button" class="btn">Add to cart</button>
+                                </div>
+                            </div>
+                            <div class="product_item col-3">
+                                <div class="img_block">
+                                    <div class="new"><span>New</span></div>
+                                    <img src="img/hotdeal1.jpg" alt="">
+                                    <div class="add-to-links ">
+                                        <div class="favorite">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-android-favorite-outline"></i>
+                                            </a>
+                                        </div>
+                                        <div class="shuffle">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-ios-shuffle-strong"></i>
+                                            </a>
+                                        </div>
+                                        <div class="search">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-ios-search-strong"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product_desc">
+                                    <div class="manufacturer"><a href="#">Studio Design</a></div>
+                                    <h3 itemprop="name"><a class="product_name" href="" title="">Originals Kaval Windbreaker Winter Jacket 2</a></h3>
+                                    <div class="reviews">
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="sr-only">Regular price</span>
+                                        <span class="regular-price">$23.90</span>
+                                        <span class="sr-only">Price</span>
+                                        <span itemprop="price" class="price price-sale">$21.51</span>
+                                        <span class="discount-percentage discount-product" style="top: 10px;">-10%</span>
+                                    </div>
+                                    <button type="button" class="btn">Add to cart</button>
+                                </div>
+                            </div>
+                            <div class="product_item col-3">
+                                <div class="img_block">
+                                    <div class="new"><span>New</span></div>
+                                    <img src="img/best_seller_1_3.jpg" alt="">
+                                    <div class="add-to-links ">
+                                        <div class="favorite">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-android-favorite-outline"></i>
+                                            </a>
+                                        </div>
+                                        <div class="shuffle">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-ios-shuffle-strong"></i>
+                                            </a>
+                                        </div>
+                                        <div class="search">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-ios-search-strong"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product_desc">
+                                    <div class="manufacturer"><a href="#">Studio Design</a></div>
+                                    <h3 itemprop="name"><a class="product_name" href="" title="">Originals Kaval Windbreaker Winter Jacket 2</a></h3>
+                                    <div class="reviews">
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star star_no_choose"></i>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="sr-only">Regular price</span>
+                                        <span class="regular-price">$23.90</span>
+                                        <span class="sr-only">Price</span>
+                                        <span itemprop="price" class="price price-sale">$21.51</span>
+                                        <span class="discount-percentage discount-product" style="top: 10px;">-10%</span>
+                                    </div>
+                                    <button type="button" class="btn">Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="product_item col-3">
+                                <div class="img_block">
+                                    <div class="new"><span>New</span></div>
+                                    <img src="img/best_seller_2_3.jpg" alt="">
+                                    <div class="add-to-links ">
+                                        <div class="favorite">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-android-favorite-outline"></i>
+                                            </a>
+                                        </div>
+                                        <div class="shuffle">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-ios-shuffle-strong"></i>
+                                            </a>
+                                        </div>
+                                        <div class="search">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-ios-search-strong"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product_desc">
+                                    <div class="manufacturer"><a href="#">Studio Design</a></div>
+                                    <h3 itemprop="name"><a class="product_name" href="" title="">Originals Kaval Windbreaker Winter Jacket 2</a></h3>
+                                    <div class="reviews">
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="sr-only">Regular price</span>
+                                        <span class="regular-price">$23.90</span>
+                                        <span class="sr-only">Price</span>
+                                        <span itemprop="price" class="price price-sale">$21.51</span>
+                                        <span class="discount-percentage discount-product" style="top: 10px;">-10%</span>
+                                    </div>
+                                    <button type="button" class="btn">Add to cart</button>
+                                </div>
+                            </div>
+                            <div class="product_item col-3">
+                                <div class="img_block">
+                                    <div class="new"><span>New</span></div>
+                                    <img src="img/best_seller_3_3.jpg" alt="">
+                                    <div class="add-to-links ">
+                                        <div class="favorite">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-android-favorite-outline"></i>
+                                            </a>
+                                        </div>
+                                        <div class="shuffle">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-ios-shuffle-strong"></i>
+                                            </a>
+                                        </div>
+                                        <div class="search">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-ios-search-strong"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product_desc">
+                                    <div class="manufacturer"><a href="#">Studio Design</a></div>
+                                    <h3 itemprop="name"><a class="product_name" href="" title="">Originals Kaval Windbreaker Winter Jacket 2</a></h3>
+                                    <div class="reviews">
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="sr-only">Regular price</span>
+                                        <span class="regular-price">$23.90</span>
+                                        <span class="sr-only">Price</span>
+                                        <span itemprop="price" class="price price-sale">$21.51</span>
+                                        <span class="discount-percentage discount-product" style="top: 10px;">-10%</span>
+                                    </div>
+                                    <button type="button" class="btn">Add to cart</button>
+                                </div>
+                            </div>
+                            <div class="product_item col-3">
+                                <div class="img_block">
+                                    <div class="new"><span>New</span></div>
+                                    <img src="img/best_seller_1_2.jpg" alt="">
+                                    <div class="add-to-links ">
+                                        <div class="favorite">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-android-favorite-outline"></i>
+                                            </a>
+                                        </div>
+                                        <div class="shuffle">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-ios-shuffle-strong"></i>
+                                            </a>
+                                        </div>
+                                        <div class="search">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-ios-search-strong"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product_desc">
+                                    <div class="manufacturer"><a href="#">Studio Design</a></div>
+                                    <h3 itemprop="name"><a class="product_name" href="" title="">Originals Kaval Windbreaker Winter Jacket 2</a></h3>
+                                    <div class="reviews">
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="sr-only">Regular price</span>
+                                        <span class="regular-price">$23.90</span>
+                                        <span class="sr-only">Price</span>
+                                        <span itemprop="price" class="price price-sale">$21.51</span>
+                                        <span class="discount-percentage discount-product" style="top: 10px;">-10%</span>
+                                    </div>
+                                    <button type="button" class="btn">Add to cart</button>
+                                </div>
+                            </div>
+                            <div class="product_item col-3">
+                                <div class="img_block">
+                                    <div class="new"><span>New</span></div>
+                                    <img src="img/best_seller_2_1.jpg" alt="">
+                                    <div class="add-to-links ">
+                                        <div class="favorite">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-android-favorite-outline"></i>
+                                            </a>
+                                        </div>
+                                        <div class="shuffle">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-ios-shuffle-strong"></i>
+                                            </a>
+                                        </div>
+                                        <div class="search">
+                                            <a class="" title="" href="#">
+                                                <i class="ionicons ion-ios-search-strong"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product_desc">
+                                    <div class="manufacturer"><a href="#">Studio Design</a></div>
+                                    <h3 itemprop="name"><a class="product_name" href="" title="">Originals Kaval Windbreaker Winter Jacket 2</a></h3>
+                                    <div class="reviews">
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star"></i>
+                                        <i class="ionicons ion-android-star star_no_choose"></i>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="sr-only">Regular price</span>
+                                        <span class="regular-price">$23.90</span>
+                                        <span class="sr-only">Price</span>
+                                        <span itemprop="price" class="price price-sale">$21.51</span>
+                                        <span class="discount-percentage discount-product" style="top: 10px;">-10%</span>
+                                    </div>
+                                    <button type="button" class="btn">Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

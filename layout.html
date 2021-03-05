@@ -56,6 +56,7 @@
         </nav>
         <div class="header-top">
             <div class="contain row">
+                <div class="menu_responsive d-none">aaa</div>
                 <div class="logo col-2">
                     <a href="layout.html"><img src="img/logo.jpg" alt=""></a>
                 </div>
@@ -101,22 +102,118 @@
                     </div>
                     <div class="cart d-flex align-items-center">
                         <div class="compare">
-                            <a href="#"><i class="ionicons ion-ios-shuffle-strong"></i></a>
-                            <span>0</span>
+                            <a href="compare.html"><i class="ionicons ion-ios-shuffle-strong"></i></a>
+                            <span class="amount">0</span>
                         </div>
                         <div class="wishtlist">
                             <a href="#"><i class="ionicons ion-android-favorite-outline"></i></a>
                             <span>0</span>
                         </div>
                         <div class="cart_icon">
-                            <a href="#"><i class="ionicons ion-bag"></i></a>
+                            <a href="cart.html"><i class="ionicons ion-bag"></i></a>
                             <span class="amount">0</span>
+                            <div class="cart_product d-none ">
+                                <div class="list_product d-flex flex-column">
+                                    <div class="empty text-center pt-5">Empty Cart !!</div>
+                                    <div id="list">
+
+                                    </div>
+                                    <div class="cart_info d-flex flex-column">
+                                        <div class="subtotal d-flex justify-content-between">
+                                            <span>Subtotal:</span>
+                                            <span class="value">1</span>
+                                        </div>
+                                        <div class="shipping d-flex justify-content-between">
+                                            <span>Shipping:</span>
+                                            <span class="value">$7.00</span>
+                                        </div>
+                                        <div class="taxes d-flex justify-content-between">
+                                            <span>Taxes:</span>
+                                            <span>$0</span>
+                                        </div>
+                                        <div class="total d-flex justify-content-between">
+                                            <span>Total:</span>
+                                            <span class="value">1</span>
+                                        </div>
+                                        <div class="btn_checkout "><button>CHECKOUT</button></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <a href="#"><span class="cost">$0.00</span></a>
                     </div>
                 </div>
+                <div class="cart_responsive d-none">
+                    <div class="cart_icon">
+                        <a href="#"><i class="ionicons ion-bag"></i></a>
+                        <span class="amount">0</span>
+
+                    </div>
+                </div>
             </div>
         </div>
+        <!-- Modal cart -->
+        <div class="modalCart modal fade" id="modalCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title text-center" id="exampleModalLabel"><i class="material-icons rtl-no-flip"></i>Product Successfully Added To Your Shopping Cart</h4>
+                        <button type="button" class="close " data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-5 product_info">
+                                <div class="row">
+                                    <div class="col-md-6 product_info_img">
+                                        <img src="" alt="">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h6 class="h6 product-name"></h6>
+                                        <p class="sale_price"></p>
+                                        <span class="size"><strong>Dimension</strong>: </span><br>
+                                        <p class="quantity"> <strong>Quantity:</strong>&nbsp;1</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-7 cart_current_info">
+                                <div class="cart-content">
+                                    <p class="cart-products-count"></p>
+                                    <strong style="float: left;">Total products: </strong>
+                                    <p class="total_products"></p>
+                                    <p><strong>Total shipping:</strong>&nbsp; 7.00 </p>
+                                    <p><strong>Taxes: </strong>$0.00</p>
+                                    <strong style="float: left;">Total: </strong>
+                                    <p class="total_">&nbsp;</p>
+                                    <div class="cart-content-btn">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Continue shopping</button>
+                                        <a href="#" class="btn btn-primary"><i class="material-icons rtl-no-flip"></i>Proceed to checkout</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>`
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal cart -->
+        <!-- Modal compare -->
+        <div class=" modal fade" id="modalCompare" tabindex="-2" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close " data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Product added to compare
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal compare -->
         <div class="header-bottom d-flex align-items-center">
             <nav class="navbar navbar-expand-sm ">
                 <ul class="navbar-nav">
@@ -192,6 +289,9 @@
 
     <!-- slider  -->
     <div class="slide">
+        <div class="main_line">
+            <div class="line_auto"></div>
+        </div>
         <div class="contain">
             <div id="slider" class="nivoSlider">
                 <img class="slide1" src="img/slide1.jpg" data-thumb="" title="" alt="slide1" data-transition="boxRandom" />
@@ -256,73 +356,10 @@
                             <div class="carousel-item active">
                                 <div class="item_product d-flex flex-column">
                                     <div class="product d-flex flex-row">
-                                        <div class="img ">
-                                            <a href="#"><img src="img/bestseller_1_1.jpg" alt=""></a>
-                                            <a class="search"><i class="material-icons">search</i></a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer"><a href="#">Studio Design</a></div>
-                                            <h3 itemprop="name"><a class="product_name" href="" title="New Balance Fresh Foam Kaymin">New Balance Fresh Foam Kaymin</a></h3>
-                                            <div class="reviews">
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                            </div>
-                                            <div class="product-price">
-                                                <span class="sr-only">Regular price</span>
-                                                <span class="regular-price">$18.90</span>
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price price-sale">$15.12</span>
-                                            </div>
-                                        </div>
                                     </div>
                                     <div class="product d-flex flex-row">
-                                        <div class="img ">
-                                            <a href="#"><img src="img/best_seller_1_2.jpg" alt=""> </a>
-                                            <a class="search"><i class="material-icons">search</i></a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer"><a href="#">Graphic Corner</a></div>
-                                            <h3 itemprop="name"><a class="product_name" href="" title="">Brixton Patrol All Terrain Anorak Jacket</a></h3>
-                                            <div class="reviews">
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                            </div>
-                                            <div class="product-price">
-                                                <span class="sr-only">Regular price</span>
-                                                <span class="regular-price"></span>
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price price-sale">$29.00</span>
-                                            </div>
-                                        </div>
                                     </div>
                                     <div class="product d-flex flex-row">
-                                        <div class="img ">
-                                            <a href="#"><img src="img/best_seller_1_3.jpg" alt=""> </a>
-                                            <a class="search"><i class="material-icons">search</i></a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer"><a href="#">Graphic Corner</a></div>
-                                            <h3 itemprop="name"><a class="product_name" href="" title="">Juicy Couture Tricot Logo Stripe Jacket</a></h3>
-                                            <div class="reviews">
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                            </div>
-                                            <div class="product-price">
-                                                <span class="sr-only">Regular price</span>
-                                                <span class="regular-price"></span>
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price price-sale">$9.00</span>
-                                            </div>
-                                        </div>
                                     </div>
 
                                 </div>
@@ -333,73 +370,10 @@
                             <div class="carousel-item">
                                 <div class="item_product d-flex flex-column">
                                     <div class="product d-flex flex-row">
-                                        <div class="img ">
-                                            <a href="#"><img src="img/best_seller_2_1.jpg" alt=""></a>
-                                            <a class="search"><i class="material-icons">search</i></a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer"><a href="#">Graphic Corner</a></div>
-                                            <h3 itemprop="name"><a class="product_name" href="" title="">New Balance Arishi Sport v1</a></h3>
-                                            <div class="reviews">
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star text-secondary"></i>
-                                            </div>
-                                            <div class="product-price">
-                                                <span class="sr-only">Regular price</span>
-                                                <span class="regular-price"></span>
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price price-sale">$29.00</span>
-                                            </div>
-                                        </div>
                                     </div>
                                     <div class="product d-flex flex-row">
-                                        <div class="img ">
-                                            <a href="#"><img src="img/best_seller_2_2.jpg" alt=""> </a>
-                                            <a class="search"><i class="material-icons">search</i></a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer"><a href="#">Studio Design</a></div>
-                                            <h3 itemprop="name"><a class="product_name" href="" title="">Madden by Steve Madden Cale 6</a></h3>
-                                            <div class="reviews">
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star "></i>
-                                            </div>
-                                            <div class="product-price">
-                                                <span class="sr-only">Regular price</span>
-                                                <span class="regular-price">$11.90</span>
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price price-sale">$10.12</span>
-                                            </div>
-                                        </div>
                                     </div>
                                     <div class="product d-flex flex-row">
-                                        <div class="img ">
-                                            <a href="#"><img src="img/best_seller_2_3.jpg" alt=""> </a>
-                                            <a class="search"><i class="material-icons">search</i></a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer"><a href="#">Studio Design</a></div>
-                                            <h3 itemprop="name"><a class="product_name" href="" title="">Originals Kaval Windbreaker Winter Jacket</a></h3>
-                                            <div class="reviews">
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                            </div>
-                                            <div class="product-price">
-                                                <span class="sr-only">Regular price</span>
-                                                <span class="regular-price">$23.09</span>
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price price-sale">$21.51</span>
-                                            </div>
-                                        </div>
                                     </div>
 
                                 </div>
@@ -410,73 +384,10 @@
                             <div class="carousel-item">
                                 <div class="item_product d-flex flex-column">
                                     <div class="product d-flex flex-row">
-                                        <div class="img ">
-                                            <a href="#"><img src="img/best_seller_3_1.jpg" alt=""></a>
-                                            <a class="search"><i class="material-icons">search</i></a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer"><a href="#">Studio Design</a></div>
-                                            <h3 itemprop="name"><a class="product_name" href="" title="">Juicy Couture Juicy Quilted Terry Track Jacket 2</a></h3>
-                                            <div class="reviews">
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star text-secondary"></i>
-                                            </div>
-                                            <div class="product-price">
-                                                <span class="sr-only">Regular price</span>
-                                                <span class="regular-price">$35.09</span>
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price price-sale">$31.11</span>
-                                            </div>
-                                        </div>
                                     </div>
                                     <div class="product d-flex flex-row">
-                                        <div class="img ">
-                                            <a href="#"><img src="img/best_seller_3_2.jpg" alt=""> </a>
-                                            <a class="search"><i class="material-icons">search</i></a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer"><a href="#">Graphic Corner</a></div>
-                                            <h3 itemprop="name"><a class="product_name" href="" title="">Brixton Patrol All Terrain Anorak Jacket 2</a></h3>
-                                            <div class="reviews">
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star text-secondary"></i>
-                                            </div>
-                                            <div class="product-price">
-                                                <span class="sr-only">Regular price</span>
-                                                <span class="regular-price"></span>
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price price-sale">$29.00</span>
-                                            </div>
-                                        </div>
                                     </div>
                                     <div class="product d-flex flex-row">
-                                        <div class="img ">
-                                            <a href="#"><img src="img/best_seller_3_3.jpg" alt=""> </a>
-                                            <a class="search"><i class="material-icons">search</i></a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer"><a href="#">Studio Design</a></div>
-                                            <h3 itemprop="name"><a class="product_name" href="" title="">Brixton Patrol All Terrain Anorak Jacket 2</a></h3>
-                                            <div class="reviews">
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                            </div>
-                                            <div class="product-price">
-                                                <span class="sr-only">Regular price</span>
-                                                <span class="regular-price">$35.09</span>
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price price-sale">$31.11</span>
-                                            </div>
-                                        </div>
                                     </div>
 
                                 </div>
@@ -487,73 +398,10 @@
                             <div class="carousel-item">
                                 <div class="item_product d-flex flex-column">
                                     <div class="product d-flex flex-row">
-                                        <div class="img ">
-                                            <a href="#"><img src="img/best_seller_4_1.jpg" alt=""></a>
-                                            <a class="search"><i class="material-icons">search</i></a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer"><a href="#">Studio Design</a></div>
-                                            <h3 itemprop="name"><a class="product_name" href="" title="">Trans-Weight Hooded Wind and Water Resistant Shell</a></h3>
-                                            <div class="reviews">
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star text-secondary"></i>
-                                            </div>
-                                            <div class="product-price">
-                                                <span class="sr-only">Regular price</span>
-                                                <span class="regular-price"></span>
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price price-sale">$11.90</span>
-                                            </div>
-                                        </div>
                                     </div>
                                     <div class="product d-flex flex-row">
-                                        <div class="img ">
-                                            <a href="#"><img src="img/best_seller_4_2.jpg" alt=""> </a>
-                                            <a class="search"><i class="material-icons">search</i></a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer"><a href="#">Studio Design</a></div>
-                                            <h3 itemprop="name"><a class="product_name" href="" title="">Water and Wind Resistant Insulated Jacket</a></h3>
-                                            <div class="reviews">
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star text-secondary"></i>
-                                            </div>
-                                            <div class="product-price">
-                                                <span class="sr-only">Regular price</span>
-                                                <span class="regular-price"></span>
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price price-sale">$19.00</span>
-                                            </div>
-                                        </div>
                                     </div>
                                     <div class="product d-flex flex-row">
-                                        <div class="img ">
-                                            <a href="#"><img src="img/best_seller_4_3.jpg" alt=""> </a>
-                                            <a class="search"><i class="material-icons">search</i></a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer"><a href="#">Studio Design</a></div>
-                                            <h3 itemprop="name"><a class="product_name" href="" title="">Juicy Couture Solid Sleeve Puffer Jacket</a></h3>
-                                            <div class="reviews">
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                                <i class="ionicons ion-android-star"></i>
-                                            </div>
-                                            <div class="product-price">
-                                                <span class="sr-only">Regular price</span>
-                                                <span class="regular-price"></span>
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price price-sale">$18.90</span>
-                                            </div>
-                                        </div>
                                     </div>
 
                                 </div>
@@ -651,7 +499,7 @@
                                         <div class="countdown d-flex">
                                             <div class="title_countdown ">Hurry Up! Offers ends in:</div>
                                             <div class="d-flex flex-column">
-                                                <div class="time_countdown " id="time_countdown" class=""></div>
+                                                <div id="time_countdown"></div>
                                                 <p>
                                                     <span class="">DAYS</span>
                                                     <span class="">HOURS</span>
@@ -724,7 +572,7 @@
                                         <div class="countdown d-flex">
                                             <div class="title_countdown ">Hurry Up! Offers ends in:</div>
                                             <div class="d-flex flex-column">
-                                                <div class="time_countdown " id="time_countdown" class=""></div>
+                                                <div class="time_countdown"></div>
                                                 <p>
                                                     <span class="">DAYS</span>
                                                     <span class="">HOURS</span>
@@ -797,7 +645,7 @@
                                         <div class="countdown d-flex">
                                             <div class="title_countdown ">Hurry Up! Offers ends in:</div>
                                             <div class="d-flex flex-column">
-                                                <div class="time_countdown " id="time_countdown" class=""></div>
+                                                <div id="time_countdown"></div>
                                                 <p>
                                                     <span class="">DAYS</span>
                                                     <span class="">HOURS</span>
@@ -870,7 +718,7 @@
                                         <div class="countdown d-flex">
                                             <div class="title_countdown ">Hurry Up! Offers ends in:</div>
                                             <div class="d-flex flex-column">
-                                                <div class="time_countdown " id="time_countdown" class=""></div>
+                                                <div id="time_countdown"></div>
                                                 <p>
                                                     <span class="">DAYS</span>
                                                     <span class="">HOURS</span>
@@ -919,718 +767,139 @@
                 </li>
             </ul>
             <div class="tab-content" id="pills-tabContent">
-                <div class=" tab-pane tab_feature_product fade show active" id="pills-Featured" role="tabpanel" aria-labelledby="pills-Featured-tab">
-                    <div class="product_container_slide">
-                        <!-- col 1 -->
-                        <div class="d-flex flex-column">
-                            <div class="product_item">
-                                <div class="img_block">
-                                    <div class="new"><span>New</span></div>
-                                    <img src="img/best_seller_2_3.jpg" alt="">
-                                    <div class="add-to-links ">
-                                        <div class="favorite">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-android-favorite-outline"></i>
-                                            </a>
-                                        </div>
-                                        <div class="shuffle">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-shuffle-strong"></i>
-                                            </a>
-                                        </div>
-                                        <div class="search">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-search-strong"></i>
-                                            </a>
-                                        </div>
-                                    </div>
+                <div class=" tab-pane tab_feature_product active fade show" id="pills-Featured" role="tabpanel" aria-labelledby="pills-Featured-tab">
+                    <div class="tab-content__slide-wrapper">
+                        <div class="product_container_slide" id="tab-content__slide-wrapper--slide1">
+                            <!-- col 1 -->
+                            <div class="d-flex flex-column">
+                                <div class="product_item">
                                 </div>
-                                <div class="product_desc">
-                                    <div class="manufacturer"><a href="#">Studio Design</a></div>
-                                    <h3 itemprop="name"><a class="product_name" href="" title="">Originals Kaval Windbreaker Winter Jacket 2</a></h3>
-                                    <div class="reviews">
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                    </div>
-                                    <div class="product-price">
-                                        <span class="sr-only">Regular price</span>
-                                        <span class="regular-price">$23.90</span>
-                                        <span class="sr-only">Price</span>
-                                        <span itemprop="price" class="price price-sale">$21.51</span>
-                                        <span class="discount-percentage discount-product" style="top: 10px;">-10%</span>
-                                    </div>
-                                    <button type="button" class="btn">Add to cart</button>
+                                <div class="product_item product_item2">
                                 </div>
                             </div>
-                            <div class="product_item product_item2">
-                                <div class="img_block">
-                                    <div class="new"><span>New</span></div>
-                                    <img src="img/best_seller_3_3.jpg" alt="">
-                                    <div class="add-to-links ">
-                                        <div class="favorite">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-android-favorite-outline"></i>
-                                            </a>
-                                        </div>
-                                        <div class="shuffle">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-shuffle-strong"></i>
-                                            </a>
-                                        </div>
-                                        <div class="search">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-search-strong"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product_desc">
-                                    <div class="manufacturer"><a href="#">Studio Design</a></div>
-                                    <h3 itemprop="name"><a class="product_name" href="" title="">Juicy Couture Juicy Quilted Terry Track Jacke</a></h3>
-                                    <div class="reviews">
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                    </div>
-                                    <div class="product-price">
-                                        <span class="sr-only">Regular price</span>
-                                        <span class="regular-price">$35.09</span>
-                                        <span class="sr-only">Price</span>
-                                        <span itemprop="price" class="price price-sale">$34.11</span>
-                                        <span class="discount-percentage discount-product" style="top: 10px;">-5%</span>
-                                    </div>
-                                    <button type="button" class="btn">Add to cart</button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- col 1 -->
+                            <!-- col 1 -->
 
-                        <!-- col 2 -->
-                        <div class="d-flex flex-column">
-                            <div class="product_item">
-                                <div class="img_block">
-                                    <div class="new"><span>New</span></div>
-                                    <img src="img/best_seller_1_2.jpg" alt="">
-                                    <div class="add-to-links ">
-                                        <div class="favorite">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-android-favorite-outline"></i>
-                                            </a>
-                                        </div>
-                                        <div class="shuffle">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-shuffle-strong"></i>
-                                            </a>
-                                        </div>
-                                        <div class="search">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-search-strong"></i>
-                                            </a>
-                                        </div>
-                                    </div>
+                            <!-- col 2 -->
+                            <div class="d-flex flex-column">
+                                <div class="product_item">
                                 </div>
-                                <div class="product_desc">
-                                    <div class="manufacturer"><a href="#">Graphic Corner</a></div>
-                                    <h3 itemprop="name"><a class="product_name" href="" title="">Brixton Patrol All Terrain Anorak Jacket</a></h3>
-                                    <div class="reviews">
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                    </div>
-                                    <div class="product-price">
-                                        <span class="sr-only">Regular price</span>
-                                        <span class="regular-price"></span>
-                                        <span class="sr-only">Price</span>
-                                        <span itemprop="price" class="price price-sale text-dark">$29.00</span>
-                                        <span class="discount-percentage discount-product" style="top: 10px;"></span>
-                                    </div>
-                                    <button type="button" class="btn">Add to cart</button>
+                                <div class="product_item product_item2">
                                 </div>
                             </div>
-                            <div class="product_item product_item2">
-                                <div class="img_block">
-                                    <div class="new"><span>New</span></div>
-                                    <img src="img/best_seller_2_1.jpg" alt="">
-                                    <div class="add-to-links ">
-                                        <div class="favorite">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-android-favorite-outline"></i>
-                                            </a>
-                                        </div>
-                                        <div class="shuffle">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-shuffle-strong"></i>
-                                            </a>
-                                        </div>
-                                        <div class="search">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-search-strong"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product_desc">
-                                    <div class="manufacturer"><a href="#">Graphic Corner</a></div>
-                                    <h3 itemprop="name"><a class="product_name" href="" title="">New Balance Arishi Sport v1</a></h3>
-                                    <div class="reviews">
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star start_no_choose"></i>
-                                    </div>
-                                    <div class="product-price">
-                                        <span class="sr-only">Regular price</span>
-                                        <span class="regular-price"></span>
-                                        <span class="sr-only">Price</span>
-                                        <span itemprop="price" class="price price-sale text-dark">$29.00</span>
-                                        <span class="discount-percentage discount-product" style="top: 10px;"></span>
-                                    </div>
-                                    <button type="button" class="btn">Add to cart</button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- col 2 -->
+                            <!-- col 2 -->
 
-                        <!-- col 3 -->
-                        <div class="d-flex flex-column">
-                            <div class="product_item">
-                                <div class="img_block">
-                                    <div class="new"><span>New</span></div>
-                                    <img src="img/hotdeal3.jpg" alt="">
-                                    <div class="add-to-links ">
-                                        <div class="favorite">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-android-favorite-outline"></i>
-                                            </a>
-                                        </div>
-                                        <div class="shuffle">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-shuffle-strong"></i>
-                                            </a>
-                                        </div>
-                                        <div class="search">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-search-strong"></i>
-                                            </a>
-                                        </div>
-                                    </div>
+                            <!-- col 3 -->
+                            <div class="d-flex flex-column">
+                                <div class="product_item">
                                 </div>
-                                <div class="product_desc">
-                                    <div class="manufacturer"><a href="#">Graphic Corner</a></div>
-                                    <h3 itemprop="name"><a class="product_name" href="" title="">Calvin Klein Jeans Reflective Logo Full Zip </a></h3>
-                                    <div class="reviews">
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                    </div>
-                                    <div class="product-price">
-                                        <span class="sr-only">Regular price</span>
-                                        <span class="regular-price"></span>
-                                        <span class="sr-only">Price</span>
-                                        <span itemprop="price" class="price price-sale text-dark">$29.00</span>
-                                        <span class="discount-percentage discount-product" style="top: 10px;"></span>
-                                    </div>
-                                    <button type="button" class="btn">Add to cart</button>
+                                <div class="product_item product_item2">
                                 </div>
                             </div>
-                            <div class="product_item product_item2">
-                                <div class="img_block">
-                                    <div class="new"><span>New</span></div>
-                                    <img src="img/best_seller_2_2.jpg" alt="">
-                                    <div class="add-to-links ">
-                                        <div class="favorite">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-android-favorite-outline"></i>
-                                            </a>
-                                        </div>
-                                        <div class="shuffle">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-shuffle-strong"></i>
-                                            </a>
-                                        </div>
-                                        <div class="search">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-search-strong"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product_desc">
-                                    <div class="manufacturer"><a href="#">Studio Design</a></div>
-                                    <h3 itemprop="name"><a class="product_name" href="" title="">Madden by Steve Madden Cale 6</a></h3>
-                                    <div class="reviews">
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star start_no_choose"></i>
-                                    </div>
-                                    <div class="product-price">
-                                        <span class="sr-only">Regular price</span>
-                                        <span class="regular-price">$11.90</span>
-                                        <span class="sr-only">Price</span>
-                                        <span itemprop="price" class="price price-sale ">$10.12</span>
-                                        <span class="discount-percentage discount-product" style="top: 10px;">-15%</span>
-                                    </div>
-                                    <button type="button" class="btn">Add to cart</button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- col 3 -->
+                            <!-- col 3 -->
 
-                        <!-- col 4 -->
-                        <div class="d-flex flex-column">
-                            <div class="product_item">
-                                <div class="img_block">
-                                    <div class="new"><span>New</span></div>
-                                    <img src="img/best_seller_4_1.jpg" alt="">
-                                    <div class="add-to-links ">
-                                        <div class="favorite">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-android-favorite-outline"></i>
-                                            </a>
-                                        </div>
-                                        <div class="shuffle">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-shuffle-strong"></i>
-                                            </a>
-                                        </div>
-                                        <div class="search">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-search-strong"></i>
-                                            </a>
-                                        </div>
-                                    </div>
+                            <!-- col 4 -->
+                            <div class="d-flex flex-column">
+                                <div class="product_item">
                                 </div>
-                                <div class="product_desc">
-                                    <div class="manufacturer"><a href="#">Studio Design</a></div>
-                                    <h3 itemprop="name"><a class="product_name" href="" title="">Trans-Weight Hooded Wind and Water Resistant Shell </a></h3>
-                                    <div class="reviews">
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star start_no_choose"></i>
-                                    </div>
-                                    <div class="product-price">
-                                        <span class="sr-only">Regular price</span>
-                                        <span class="regular-price"></span>
-                                        <span class="sr-only">Price</span>
-                                        <span itemprop="price" class="price price-sale text-dark">$11.90</span>
-                                        <span class="discount-percentage discount-product" style="top: 10px;"></span>
-                                    </div>
-                                    <button type="button" class="btn">Add to cart</button>
+                                <div class="product_item product_item2">
                                 </div>
                             </div>
-                            <div class="product_item product_item2">
-                                <div class="img_block">
-                                    <div class="new"><span>New</span></div>
-                                    <img src="img/best_seller_4_2.jpg" alt="">
-                                    <div class="add-to-links ">
-                                        <div class="favorite">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-android-favorite-outline"></i>
-                                            </a>
-                                        </div>
-                                        <div class="shuffle">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-shuffle-strong"></i>
-                                            </a>
-                                        </div>
-                                        <div class="search">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-search-strong"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product_desc">
-                                    <div class="manufacturer"><a href="#">Studio Design</a></div>
-                                    <h3 itemprop="name"><a class="product_name" href="" title="">Water and Wind Resistant Insulated Jacket</a></h3>
-                                    <div class="reviews">
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star start_no_choose"></i>
-                                    </div>
-                                    <div class="product-price">
-                                        <span class="sr-only">Regular price</span>
-                                        <span class="regular-price"></span>
-                                        <span class="sr-only">Price</span>
-                                        <span itemprop="price" class="price price-sale ">$11.90</span>
-                                        <span class="discount-percentage discount-product" style="top: 10px;"></span>
-                                    </div>
-                                    <button type="button" class="btn">Add to cart</button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- col 4 -->
+                            <!-- col 4 -->
 
-                        <!-- col 5 -->
-                        <div class="d-flex flex-column">
-                            <div class="product_item">
-                                <div class="img_block">
-                                    <div class="new"><span>New</span></div>
-                                    <img src="img/bestseller_1_1.jpg" alt="">
-                                    <div class="add-to-links ">
-                                        <div class="favorite">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-android-favorite-outline"></i>
-                                            </a>
-                                        </div>
-                                        <div class="shuffle">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-shuffle-strong"></i>
-                                            </a>
-                                        </div>
-                                        <div class="search">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-search-strong"></i>
-                                            </a>
-                                        </div>
-                                    </div>
+                            <!-- col 5 -->
+                            <div class="d-flex flex-column">
+                                <div class="product_item">
                                 </div>
-                                <div class="product_desc">
-                                    <div class="manufacturer"><a href="#">Studio Design</a></div>
-                                    <h3 itemprop="name"><a class="product_name" href="" title="">New Balance Fresh Foam Kaymin</a></h3>
-                                    <div class="reviews">
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star "></i>
-                                    </div>
-                                    <div class="product-price">
-                                        <span class="sr-only">Regular price</span>
-                                        <span class="regular-price">$18.90</span>
-                                        <span class="sr-only">Price</span>
-                                        <span itemprop="price" class="price price-sale ">$15.12</span>
-                                        <span class="discount-percentage discount-product" style="top: 10px;">-20%</span>
-                                    </div>
-                                    <button type="button" class="btn">Add to cart</button>
+                                <div class="product_item product_item2">
                                 </div>
                             </div>
-                            <div class="product_item product_item2">
-                                <div class="img_block">
-                                    <div class="new"><span>New</span></div>
-                                    <img src="img/best_seller_4_3.jpg" alt="">
-                                    <div class="add-to-links ">
-                                        <div class="favorite">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-android-favorite-outline"></i>
-                                            </a>
-                                        </div>
-                                        <div class="shuffle">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-shuffle-strong"></i>
-                                            </a>
-                                        </div>
-                                        <div class="search">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-search-strong"></i>
-                                            </a>
-                                        </div>
-                                    </div>
+                            <!-- col 5 -->
+                            <!-- col 6 -->
+                            <div class="d-flex flex-column">
+                                <div class="product_item">
                                 </div>
-                                <div class="product_desc">
-                                    <div class="manufacturer"><a href="#">Studio Design</a></div>
-                                    <h3 itemprop="name"><a class="product_name" href="" title="">Juicy Couture Solid Sleeve Puffer Jacket</a></h3>
-                                    <div class="reviews">
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star "></i>
-                                    </div>
-                                    <div class="product-price">
-                                        <span class="sr-only">Regular price</span>
-                                        <span class="regular-price"></span>
-                                        <span class="sr-only">Price</span>
-                                        <span itemprop="price" class="price price-sale ">$18.90</span>
-                                        <span class="discount-percentage discount-product" style="top: 10px;"></span>
-                                    </div>
-                                    <button type="button" class="btn">Add to cart</button>
+                                <div class="product_item product_item2">
                                 </div>
                             </div>
+                            <!-- col 6 -->
                         </div>
-                        <!-- col 5 -->
-                        <!-- col 6 -->
-                        <div class="d-flex flex-column">
-                            <div class="product_item">
-                                <div class="img_block">
-                                    <div class="new"><span>New</span></div>
-                                    <img src="img/hotdeal1.jpg" alt="">
-                                    <div class="add-to-links ">
-                                        <div class="favorite">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-android-favorite-outline"></i>
-                                            </a>
-                                        </div>
-                                        <div class="shuffle">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-shuffle-strong"></i>
-                                            </a>
-                                        </div>
-                                        <div class="search">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-search-strong"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product_desc">
-                                    <div class="manufacturer"><a href="#">Studio Design</a></div>
-                                    <h3 itemprop="name"><a class="product_name" href="" title="">New Balance Fresh Foam LAZR v1 Sport</a></h3>
-                                    <div class="reviews">
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star "></i>
-                                    </div>
-                                    <div class="product-price">
-                                        <span class="sr-only">Regular price</span>
-                                        <span class="regular-price"></span>
-                                        <span class="sr-only">Price</span>
-                                        <span itemprop="price" class="price price-sale ">$8.90</span>
-                                        <span class="discount-percentage discount-product" style="top: 10px;"></span>
-                                    </div>
-                                    <button type="button" class="btn">Add to cart</button>
-                                </div>
-                            </div>
-                            <div class="product_item product_item2">
-                                <div class="img_block">
-                                    <div class="new"><span>New</span></div>
-                                    <img src="img/best_seller_1_3.jpg" alt="">
-                                    <div class="add-to-links ">
-                                        <div class="favorite">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-android-favorite-outline"></i>
-                                            </a>
-                                        </div>
-                                        <div class="shuffle">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-shuffle-strong"></i>
-                                            </a>
-                                        </div>
-                                        <div class="search">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-search-strong"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product_desc">
-                                    <div class="manufacturer"><a href="#">Graphic Corner</a></div>
-                                    <h3 itemprop="name"><a class="product_name" href="" title="">Juicy Couture Tricot Logo Stripe Jacket</a></h3>
-                                    <div class="reviews">
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star "></i>
-                                    </div>
-                                    <div class="product-price">
-                                        <span class="sr-only">Regular price</span>
-                                        <span class="regular-price"></span>
-                                        <span class="sr-only">Price</span>
-                                        <span itemprop="price" class="price price-sale ">$9.00</span>
-                                        <span class="discount-percentage discount-product" style="top: 10px;"></span>
-                                    </div>
-                                    <button type="button" class="btn">Add to cart</button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- col 6 -->
                     </div>
                 </div>
                 <div class=" tab-pane tab_new_product fade" id="pills-Arrival" role="tabpanel" aria-labelledby="pills-Arrival-tab">
-                    <div class="product_container_slide">
-                        <!-- col 1 -->
-                        <div class="d-flex flex-column">
-                            <div class="product_item">
-                                <div class="img_block">
-                                    <div class="new"><span>New</span></div>
-                                    <img src="img/best_seller_2_3.jpg" alt="">
-                                    <div class="add-to-links ">
-                                        <div class="favorite">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-android-favorite-outline"></i>
-                                            </a>
-                                        </div>
-                                        <div class="shuffle">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-shuffle-strong"></i>
-                                            </a>
-                                        </div>
-                                        <div class="search">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-search-strong"></i>
-                                            </a>
-                                        </div>
-                                    </div>
+                    <div class="tab-content__slide-wrapper">
+                        <div class="product_container_slide" id="tab-content__slide-wrapper--slide2">
+                            <!-- col 1 -->
+                            <div class="d-flex flex-column">
+                                <div class="product_item">
                                 </div>
-                                <div class="product_desc">
-                                    <div class="manufacturer"><a href="#">Studio Design</a></div>
-                                    <h3 itemprop="name"><a class="product_name" href="" title="">Originals Kaval Windbreaker Winter Jacket 2</a></h3>
-                                    <div class="reviews">
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                    </div>
-                                    <div class="product-price">
-                                        <span class="sr-only">Regular price</span>
-                                        <span class="regular-price">$23.90</span>
-                                        <span class="sr-only">Price</span>
-                                        <span itemprop="price" class="price price-sale">$21.51</span>
-                                        <span class="discount-percentage discount-product" style="top: 10px;">-10%</span>
-                                    </div>
-                                    <button type="button" class="btn">Add to cart</button>
+                                <div class="product_item product_item2">
                                 </div>
                             </div>
+                            <!-- col 1 -->
+
+                            <!-- col 2 -->
+                            <div class="d-flex flex-column">
+                                <div class="product_item">
+                                </div>
+                                <div class="product_item product_item2">
+                                </div>
+                            </div>
+                            <!-- col 2 -->
+
+                            <!-- col 3 -->
+                            <div class="d-flex flex-column">
+                                <div class="product_item">
+                                </div>
+                                <div class="product_item product_item2">
+                                </div>
+                            </div>
+                            <!-- col 3 -->
+
+                            <!-- col 4 -->
+                            <div class="d-flex flex-column">
+                                <div class="product_item">
+                                </div>
+                                <div class="product_item product_item2">
+                                </div>
+                            </div>
+                            <!-- col 4 -->
+
+                            <!-- col 5 -->
+                            <div class="d-flex flex-column">
+                                <div class="product_item">
+                                </div>
+                                <div class="product_item product_item2">
+                                </div>
+                            </div>
+                            <!-- col 5 -->
+                            <!-- col 6 -->
+                            <div class="d-flex flex-column">
+                                <div class="product_item">
+                                </div>
+                                <div class="product_item product_item2">
+                                </div>
+                            </div>
+                            <!-- col 6 -->
+                        </div>
+                    </div>
+
+                </div>
+                <div class="tab-pane tab_sale_product fade" id="pills-OnSale" role="tabpanel" aria-labelledby="pills-OnSale-tab">
+                    <div class="tab3 d-flex flex-row">
+                        <!-- col 1 -->
+                        <div class="d-flex flex-column ">
+                            <div class="product_item">
+                            </div>
                             <div class="product_item product_item2">
-                                <div class="img_block">
-                                    <div class="new"><span>New</span></div>
-                                    <img src="img/best_seller_3_3.jpg" alt="">
-                                    <div class="add-to-links ">
-                                        <div class="favorite">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-android-favorite-outline"></i>
-                                            </a>
-                                        </div>
-                                        <div class="shuffle">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-shuffle-strong"></i>
-                                            </a>
-                                        </div>
-                                        <div class="search">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-search-strong"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product_desc">
-                                    <div class="manufacturer"><a href="#">Studio Design</a></div>
-                                    <h3 itemprop="name"><a class="product_name" href="" title="">Juicy Couture Juicy Quilted Terry Track Jacke</a></h3>
-                                    <div class="reviews">
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                    </div>
-                                    <div class="product-price">
-                                        <span class="sr-only">Regular price</span>
-                                        <span class="regular-price">$35.09</span>
-                                        <span class="sr-only">Price</span>
-                                        <span itemprop="price" class="price price-sale">$34.11</span>
-                                        <span class="discount-percentage discount-product" style="top: 10px;">-5%</span>
-                                    </div>
-                                    <button type="button" class="btn">Add to cart</button>
-                                </div>
                             </div>
                         </div>
                         <!-- col 1 -->
 
                         <!-- col 2 -->
-                        <div class="d-flex flex-column">
+                        <div class="d-flex flex-column ">
                             <div class="product_item">
-                                <div class="img_block">
-                                    <div class="new"><span>New</span></div>
-                                    <img src="img/best_seller_1_2.jpg" alt="">
-                                    <div class="add-to-links ">
-                                        <div class="favorite">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-android-favorite-outline"></i>
-                                            </a>
-                                        </div>
-                                        <div class="shuffle">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-shuffle-strong"></i>
-                                            </a>
-                                        </div>
-                                        <div class="search">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-search-strong"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product_desc">
-                                    <div class="manufacturer"><a href="#">Graphic Corner</a></div>
-                                    <h3 itemprop="name"><a class="product_name" href="" title="">Brixton Patrol All Terrain Anorak Jacket</a></h3>
-                                    <div class="reviews">
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                    </div>
-                                    <div class="product-price">
-                                        <span class="sr-only">Regular price</span>
-                                        <span class="regular-price"></span>
-                                        <span class="sr-only">Price</span>
-                                        <span itemprop="price" class="price price-sale text-dark">$29.00</span>
-                                        <span class="discount-percentage discount-product" style="top: 10px;"></span>
-                                    </div>
-                                    <button type="button" class="btn">Add to cart</button>
-                                </div>
                             </div>
                             <div class="product_item product_item2">
-                                <div class="img_block">
-                                    <div class="new"><span>New</span></div>
-                                    <img src="img/best_seller_2_1.jpg" alt="">
-                                    <div class="add-to-links ">
-                                        <div class="favorite">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-android-favorite-outline"></i>
-                                            </a>
-                                        </div>
-                                        <div class="shuffle">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-shuffle-strong"></i>
-                                            </a>
-                                        </div>
-                                        <div class="search">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-search-strong"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product_desc">
-                                    <div class="manufacturer"><a href="#">Graphic Corner</a></div>
-                                    <h3 itemprop="name"><a class="product_name" href="" title="">New Balance Arishi Sport v1</a></h3>
-                                    <div class="reviews">
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star start_no_choose"></i>
-                                    </div>
-                                    <div class="product-price">
-                                        <span class="sr-only">Regular price</span>
-                                        <span class="regular-price"></span>
-                                        <span class="sr-only">Price</span>
-                                        <span itemprop="price" class="price price-sale text-dark">$29.00</span>
-                                        <span class="discount-percentage discount-product" style="top: 10px;"></span>
-                                    </div>
-                                    <button type="button" class="btn">Add to cart</button>
-                                </div>
                             </div>
                         </div>
                         <!-- col 2 -->
@@ -1638,360 +907,13 @@
                         <!-- col 3 -->
                         <div class="d-flex flex-column">
                             <div class="product_item">
-                                <div class="img_block">
-                                    <div class="new"><span>New</span></div>
-                                    <img src="img/hotdeal3.jpg" alt="">
-                                    <div class="add-to-links ">
-                                        <div class="favorite">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-android-favorite-outline"></i>
-                                            </a>
-                                        </div>
-                                        <div class="shuffle">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-shuffle-strong"></i>
-                                            </a>
-                                        </div>
-                                        <div class="search">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-search-strong"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product_desc">
-                                    <div class="manufacturer"><a href="#">Graphic Corner</a></div>
-                                    <h3 itemprop="name"><a class="product_name" href="" title="">Calvin Klein Jeans Reflective Logo Full Zip </a></h3>
-                                    <div class="reviews">
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                    </div>
-                                    <div class="product-price">
-                                        <span class="sr-only">Regular price</span>
-                                        <span class="regular-price"></span>
-                                        <span class="sr-only">Price</span>
-                                        <span itemprop="price" class="price price-sale text-dark">$29.00</span>
-                                        <span class="discount-percentage discount-product" style="top: 10px;"></span>
-                                    </div>
-                                    <button type="button" class="btn">Add to cart</button>
-                                </div>
                             </div>
                             <div class="product_item product_item2">
-                                <div class="img_block">
-                                    <div class="new"><span>New</span></div>
-                                    <img src="img/best_seller_2_2.jpg" alt="">
-                                    <div class="add-to-links ">
-                                        <div class="favorite">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-android-favorite-outline"></i>
-                                            </a>
-                                        </div>
-                                        <div class="shuffle">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-shuffle-strong"></i>
-                                            </a>
-                                        </div>
-                                        <div class="search">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-search-strong"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product_desc">
-                                    <div class="manufacturer"><a href="#">Studio Design</a></div>
-                                    <h3 itemprop="name"><a class="product_name" href="" title="">Madden by Steve Madden Cale 6</a></h3>
-                                    <div class="reviews">
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star start_no_choose"></i>
-                                    </div>
-                                    <div class="product-price">
-                                        <span class="sr-only">Regular price</span>
-                                        <span class="regular-price">$11.90</span>
-                                        <span class="sr-only">Price</span>
-                                        <span itemprop="price" class="price price-sale ">$10.12</span>
-                                        <span class="discount-percentage discount-product" style="top: 10px;">-15%</span>
-                                    </div>
-                                    <button type="button" class="btn">Add to cart</button>
-                                </div>
                             </div>
                         </div>
                         <!-- col 3 -->
-
-                        <!-- col 4 -->
-                        <div class="d-flex flex-column">
-                            <div class="product_item">
-                                <div class="img_block">
-                                    <div class="new"><span>New</span></div>
-                                    <img src="img/best_seller_4_1.jpg" alt="">
-                                    <div class="add-to-links ">
-                                        <div class="favorite">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-android-favorite-outline"></i>
-                                            </a>
-                                        </div>
-                                        <div class="shuffle">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-shuffle-strong"></i>
-                                            </a>
-                                        </div>
-                                        <div class="search">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-search-strong"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product_desc">
-                                    <div class="manufacturer"><a href="#">Studio Design</a></div>
-                                    <h3 itemprop="name"><a class="product_name" href="" title="">Trans-Weight Hooded Wind and Water Resistant Shell </a></h3>
-                                    <div class="reviews">
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star start_no_choose"></i>
-                                    </div>
-                                    <div class="product-price">
-                                        <span class="sr-only">Regular price</span>
-                                        <span class="regular-price"></span>
-                                        <span class="sr-only">Price</span>
-                                        <span itemprop="price" class="price price-sale text-dark">$11.90</span>
-                                        <span class="discount-percentage discount-product" style="top: 10px;"></span>
-                                    </div>
-                                    <button type="button" class="btn">Add to cart</button>
-                                </div>
-                            </div>
-                            <div class="product_item product_item2">
-                                <div class="img_block">
-                                    <div class="new"><span>New</span></div>
-                                    <img src="img/best_seller_4_2.jpg" alt="">
-                                    <div class="add-to-links ">
-                                        <div class="favorite">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-android-favorite-outline"></i>
-                                            </a>
-                                        </div>
-                                        <div class="shuffle">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-shuffle-strong"></i>
-                                            </a>
-                                        </div>
-                                        <div class="search">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-search-strong"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product_desc">
-                                    <div class="manufacturer"><a href="#">Studio Design</a></div>
-                                    <h3 itemprop="name"><a class="product_name" href="" title="">Water and Wind Resistant Insulated Jacket</a></h3>
-                                    <div class="reviews">
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star start_no_choose"></i>
-                                    </div>
-                                    <div class="product-price">
-                                        <span class="sr-only">Regular price</span>
-                                        <span class="regular-price"></span>
-                                        <span class="sr-only">Price</span>
-                                        <span itemprop="price" class="price price-sale ">$11.90</span>
-                                        <span class="discount-percentage discount-product" style="top: 10px;"></span>
-                                    </div>
-                                    <button type="button" class="btn">Add to cart</button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- col 4 -->
-
-                        <!-- col 5 -->
-                        <div class="d-flex flex-column">
-                            <div class="product_item">
-                                <div class="img_block">
-                                    <div class="new"><span>New</span></div>
-                                    <img src="img/bestseller_1_1.jpg" alt="">
-                                    <div class="add-to-links ">
-                                        <div class="favorite">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-android-favorite-outline"></i>
-                                            </a>
-                                        </div>
-                                        <div class="shuffle">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-shuffle-strong"></i>
-                                            </a>
-                                        </div>
-                                        <div class="search">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-search-strong"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product_desc">
-                                    <div class="manufacturer"><a href="#">Studio Design</a></div>
-                                    <h3 itemprop="name"><a class="product_name" href="" title="">New Balance Fresh Foam Kaymin</a></h3>
-                                    <div class="reviews">
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star "></i>
-                                    </div>
-                                    <div class="product-price">
-                                        <span class="sr-only">Regular price</span>
-                                        <span class="regular-price">$18.90</span>
-                                        <span class="sr-only">Price</span>
-                                        <span itemprop="price" class="price price-sale ">$15.12</span>
-                                        <span class="discount-percentage discount-product" style="top: 10px;">-20%</span>
-                                    </div>
-                                    <button type="button" class="btn">Add to cart</button>
-                                </div>
-                            </div>
-                            <div class="product_item product_item2">
-                                <div class="img_block">
-                                    <div class="new"><span>New</span></div>
-                                    <img src="img/best_seller_4_3.jpg" alt="">
-                                    <div class="add-to-links ">
-                                        <div class="favorite">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-android-favorite-outline"></i>
-                                            </a>
-                                        </div>
-                                        <div class="shuffle">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-shuffle-strong"></i>
-                                            </a>
-                                        </div>
-                                        <div class="search">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-search-strong"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product_desc">
-                                    <div class="manufacturer"><a href="#">Studio Design</a></div>
-                                    <h3 itemprop="name"><a class="product_name" href="" title="">Juicy Couture Solid Sleeve Puffer Jacket</a></h3>
-                                    <div class="reviews">
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star "></i>
-                                    </div>
-                                    <div class="product-price">
-                                        <span class="sr-only">Regular price</span>
-                                        <span class="regular-price"></span>
-                                        <span class="sr-only">Price</span>
-                                        <span itemprop="price" class="price price-sale ">$18.90</span>
-                                        <span class="discount-percentage discount-product" style="top: 10px;"></span>
-                                    </div>
-                                    <button type="button" class="btn">Add to cart</button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- col 5 -->
-                        <!-- col 6 -->
-                        <div class="d-flex flex-column">
-                            <div class="product_item">
-                                <div class="img_block">
-                                    <div class="new"><span>New</span></div>
-                                    <img src="img/hotdeal1.jpg" alt="">
-                                    <div class="add-to-links ">
-                                        <div class="favorite">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-android-favorite-outline"></i>
-                                            </a>
-                                        </div>
-                                        <div class="shuffle">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-shuffle-strong"></i>
-                                            </a>
-                                        </div>
-                                        <div class="search">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-search-strong"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product_desc">
-                                    <div class="manufacturer"><a href="#">Studio Design</a></div>
-                                    <h3 itemprop="name"><a class="product_name" href="" title="">New Balance Fresh Foam LAZR v1 Sport</a></h3>
-                                    <div class="reviews">
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star "></i>
-                                    </div>
-                                    <div class="product-price">
-                                        <span class="sr-only">Regular price</span>
-                                        <span class="regular-price"></span>
-                                        <span class="sr-only">Price</span>
-                                        <span itemprop="price" class="price price-sale ">$8.90</span>
-                                        <span class="discount-percentage discount-product" style="top: 10px;"></span>
-                                    </div>
-                                    <button type="button" class="btn">Add to cart</button>
-                                </div>
-                            </div>
-                            <div class="product_item product_item2">
-                                <div class="img_block">
-                                    <div class="new"><span>New</span></div>
-                                    <img src="img/best_seller_1_3.jpg" alt="">
-                                    <div class="add-to-links ">
-                                        <div class="favorite">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-android-favorite-outline"></i>
-                                            </a>
-                                        </div>
-                                        <div class="shuffle">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-shuffle-strong"></i>
-                                            </a>
-                                        </div>
-                                        <div class="search">
-                                            <a class="" title="" href="#">
-                                                <i class="ionicons ion-ios-search-strong"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product_desc">
-                                    <div class="manufacturer"><a href="#">Graphic Corner</a></div>
-                                    <h3 itemprop="name"><a class="product_name" href="" title="">Juicy Couture Tricot Logo Stripe Jacket</a></h3>
-                                    <div class="reviews">
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star"></i>
-                                        <i class="ionicons ion-android-star "></i>
-                                    </div>
-                                    <div class="product-price">
-                                        <span class="sr-only">Regular price</span>
-                                        <span class="regular-price"></span>
-                                        <span class="sr-only">Price</span>
-                                        <span itemprop="price" class="price price-sale ">$9.00</span>
-                                        <span class="discount-percentage discount-product" style="top: 10px;"></span>
-                                    </div>
-                                    <button type="button" class="btn">Add to cart</button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- col 6 -->
                     </div>
                 </div>
-                <div class="tab-pane tab_sale_product fade" id="pills-OnSale" role="tabpanel" aria-labelledby="pills-OnSale-tab"></div>
             </div>
         </div>
         <div class="Lastest_blog ">
@@ -2075,17 +997,66 @@
         </div>
     </div>
     <footer id="footer">
-        <div class="footer-container ">
+        <div class="footer-container">
             <div class="footer_top">
-
+                <div class="row">
+                    <div class="col-md-2">
+                        <h3>INFORMATION</h3>
+                        <div class="list">
+                            <a href="#">Delivery</a >
+                            <a href="#">About Us</a >
+                            <a href="#">Secure Payment</a >
+                            <a href="#">Contact Us</a >
+                            <a href="#">Sitemap</a >
+                            <a href="#">Stores</a >
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <h3>CUSTOM LINKS</h3>
+                        <div class="list">
+                            <a href="#">Legal Notice</a >
+                            <a href="#">Prices Drop</a >
+                            <a href="#">New Products</a >
+                            <a href="#">Best Sales</a >
+                            <a href="#">Login</a >
+                            <a href="#">My Account</a >
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <h3>MY ACCOUNT</h3>
+                        <div class="list">
+                            <a href="#">Personal Info</a >
+                            <a href="#">Orders</a>
+                            <a href="#">Credit Slips</a >
+                            <a href="#">Addresses</a>
+                            <a href="#">My Wishlists</a>
+                            <a href="#">My Account</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="hidden-sm-down">Newsletter</h3>
+                        <p>You may unsubscribe at any moment. For that purpose, please find our contact info in the legal notice.</p>
+                        <div class="col col_form">
+                            <form action="" method="post">
+                                <input class="btn btn-primary" name="submitNewsletter" type="submit" value="Sign up">
+                                <div class="input-wrapper">
+                                    <input name="email" type="email" value="" placeholder="Your email address">
+                                </div>
+                                <input type="hidden" name="action" value="0">
+                                <div class="clearfix"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="footer_bottom">
 
             </div>
         </div>
-
     </footer>
     <a href="#" id="toTopBtn" class="cd-top text-replace js-cd-top cd-top--is-visible cd-top--fade-out" data-abc="true"><i class="fa fa-arrow-up"></i></a>
+    <script src="js/data_product.js" type="text/javascript"></script>
+    <script src="js/data_bestseller.js" type="text/javascript"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js "></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script type="text/javascript" src="nivo-slider/nivo-slider/jquery.nivo.slider.pack.js"></script>
@@ -2120,8 +1091,10 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $('#item-example').on('slide.bs.carousel', function() {
-                $('.slider-for').slick('refresh');
-                $('.slider-nav').slick('refresh');
+                $(document).ready(function() {
+                    $('.slider-for').slick('refresh');
+                    $('.slider-nav').slick('refresh');
+                });
             })
             $('.slider-for').slick({
                 slidesToShow: 1,
@@ -2145,7 +1118,38 @@
                 var slideno = $(this).data('slide');
                 $('.slider-nav').slick('slickGoTo', slideno - 1);
             });
-            $('.product_container_slide').slick({
+            $('#tab-content__slide-wrapper--slide1').slick({
+                dots: false,
+                infinite: false,
+                speed: 1000,
+                slidesToShow: 5,
+                slidesToScroll: 1,
+                arrows: true,
+                prevArrow: '<i class="back text-dark ionicons ion-ios-arrow-left"></i>',
+                nextArrow: '<i class="next text-dark ionicons ion-ios-arrow-right"></i>',
+                responsive: [{
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        infinite: true,
+                        dots: true
+                    }
+                }, {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                }, {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }]
+            });
+            $('#tab-content__slide-wrapper--slide2').slick({
                 dots: false,
                 infinite: false,
                 speed: 1000,
@@ -2217,7 +1221,6 @@
                 prevArrow: '<i class="back text-dark ionicons ion-ios-arrow-left"></i>',
                 nextArrow: '<i class="next text-dark ionicons ion-ios-arrow-right"></i>',
             });
-
         });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
